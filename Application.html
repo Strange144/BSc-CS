@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
+    
+    <!-- SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+    
+    <!-- Apple Touch Icon (For iOS) -->
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+    
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="stylesheet" href="styleapp.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Application Form</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="7854ff93-7d86-47c2-8438-763cd273aa6d">
+            <div class="form-row">
+                <div>
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                </div>
+                <div>
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div>
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="1234567890" required>
+                </div>
+            </div>
+
+            <div>
+                <label for="altPhone">Alternate Phone Number (Optional)</label>
+                <input type="tel" id="altPhone" name="altPhone" placeholder="1234567890">
+            </div>
+
+            <div>
+                <label for="address">Address</label>
+                <textarea id="address" name="address" placeholder="Street, City, State, ZIP Code" required rows="3"></textarea>
+            </div>
+
+            <div class="form-row">
+                <div>
+                    <label for="university">Board/University</label>
+                    <input type="text" id="university" name="university" placeholder="University/Board Name" required>
+                </div>
+                <div>
+                    <label for="marks">12th Grade/Equivalent Marks (%)</label>
+                    <input type="number" id="marks" name="marks" placeholder="Enter marks in %" required min="0" max="100">
+                </div>
+            </div>
+
+            <div>
+                <label for="subjects">Subjects Studied</label>
+                <input type="text" id="subjects" name="subjects" placeholder="Mathematics, Science, etc." required>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="confirmation" name="confirmation" required>
+                <label for="confirmation">I confirm that the information provided is accurate.</label>
+            </div>
+
+            <button id="bb" type="submit" disabled>Submit Application</button>
+            <a href="index.html" style="text-align: center;">Back to home</a>
+        </form>
+        <script>
+            document.getElementById("confirmation").addEventListener("change", function () {
+                document.querySelector("button[type='submit']").disabled = !this.checked;
+            });
+
+            
+        </script>
+    </div>
+</body>
+</html>
