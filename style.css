@@ -93,6 +93,9 @@ body {
         flex-wrap: wrap;
         padding: 10px 3vw;
     }
+    .home-space{
+        display: none;
+    }
     .nav-links {
         position: fixed;
         top: 0;
